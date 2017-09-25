@@ -10,17 +10,28 @@ class App extends Component {
   constructor(props){
     super(props);
       this.state = {
-        pictures: []
+        rover: "Curiosity",
+        camera: "FHAZ",
+        images: [],
+        sol: ""
       }
   }
+
+  _handleChange = (event) => {
+    this.setState({pilot: event.target.value})
+}
+
+  _handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.nameChange(this.state.pilot)
+}
 
   populatePictures = () =>{
     getPictures().then((response)=>{
     console.log(response)
   
-      this.setState({pictures: response.data.results})
+      this.setState({images: response.data.results})
     })
-  console.log(getPictures)
   }
 
   componentDidMount(){
