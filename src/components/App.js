@@ -3,6 +3,8 @@ import '../styles/App.css';
 
 import {getPictures} from '../services';
 
+import GetImageForm from './GetImageForm';
+
 class App extends Component {
 
   constructor(props){
@@ -28,7 +30,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        Chad's shenanigans here ...
+        <GetImageForm />
       </div>
     );
   }
