@@ -10,7 +10,7 @@ export default class GetImageButton extends Component{
     render(){
         return(
             <div> 
-                <button onClick={this.props.fetchRoverImage}>Get Image!</button>
+                <button onClick={this.props.fetchRoverImage}>View Image!</button>
             </div>
         )
     }

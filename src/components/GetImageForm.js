@@ -42,16 +42,17 @@ export default class GetImageForm extends Component{
 
     render(){
         return(
-        <div>
-            <form className = "roverSearchBar">
+        <div className="container">
+            <div className="center-me">
+            <form className = "jumbotron resize-me">
             <label htmlFor="rover">Rover</label>
-            <select onChange={this.handleRoverChange} value={this.state.value}id="rover">
+            <select className="custom-select" onChange={this.handleRoverChange} value={this.state.value}id="rover">
               <option value="Curiosity">Curiosity</option>
               <option value="Opportunity">Opportunity</option>
               <option value="Spirit">Spirit</option>
             </select>
             <label htmlFor="camera">Camera Type</label>
-            <select onChange={this.handleCameraChange} value={this.state.value} id="camera">
+            <select className="custom-select" onChange={this.handleCameraChange} value={this.state.value} id="camera">
               <option value="fhaz">FHAZ (Front Hazard)</option>
               <option value="rhaz">RHAZ (Rear Hazard)</option>
               <option value="navcam">NAVCAM (Navigation Cam)</option>
@@ -63,6 +64,8 @@ export default class GetImageForm extends Component{
             <GetImageButton 
             fetchRoverImage = {this.fetchRoverImage}
             />
+            </div>
+            <div className="row">
             {this.props.photos.map((roverPhotos)=>{
                 return(
                 <ImageDisplay
@@ -72,6 +75,7 @@ export default class GetImageForm extends Component{
                 )
             }
             )}
+            </div>
             
         </div>
         )
