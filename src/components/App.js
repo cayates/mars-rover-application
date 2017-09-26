@@ -10,14 +10,14 @@ class App extends Component {
   constructor(props){
     super(props);
       this.state = {
-        images: []
+        photos: []
       }
   }
 
   populatePictures = (imageUrl) =>{
     getPictures(imageUrl).then((response)=>{
-    console.log(response.data)
-      this.setState({images: response.data})
+    console.log(response)
+      this.setState({photos: response.data.photos})
     })
   }
 
@@ -26,7 +26,7 @@ class App extends Component {
       <div>
         <GetImageForm 
         populatePictures = {this.populatePictures}
-
+        photos={this.state.photos}
         />
       </div>
     );

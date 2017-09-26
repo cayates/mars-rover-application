@@ -41,7 +41,6 @@ export default class GetImageForm extends Component{
       }
 
     render(){
-        console.log(this.state)
         return(
         <div>
             <form className = "roverSearchBar">
@@ -64,9 +63,16 @@ export default class GetImageForm extends Component{
             <GetImageButton 
             fetchRoverImage = {this.fetchRoverImage}
             />
-            <ImageDisplay 
+            {this.props.photos.map((roverPhotos)=>{
+                return(
+                <ImageDisplay
+                key={roverPhotos.id}
+                roverPhotos={roverPhotos.img_src}
+                />
+                )
+            }
+            )}
             
-            />
         </div>
         )
     }
