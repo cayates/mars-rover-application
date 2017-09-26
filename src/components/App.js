@@ -10,33 +10,9 @@ class App extends Component {
   constructor(props){
     super(props);
       this.state = {
-        rover: "Curiosity",
-        camera: "FHAZ",
-        images: [],
-        sol: ""
+        images: []
       }
   }
-
-  handleRoverChange = (event) => {
-    this.setState({rover: this.state.rover})
-  }
-
-  handleCameraChange = (event) => {
-    this.setState({camera: this.state.camera})
-  }
-
-  handleSolChange = (event) => {
-    this.setState({sol: this.state.sol})
-  }
-
-//   _handleChange = (event) => {
-//     this.setState({pilot: event.target.value})
-// }
-
-//   _handleSubmit = (event) => {
-//     event.preventDefault()
-//     this.props.nameChange(this.state.pilot)
-// }
 
   populatePictures = () =>{
     getPictures().then((response)=>{
@@ -55,7 +31,7 @@ class App extends Component {
       <div>
         <GetImageForm 
 
-        
+
         />
       </div>
     );
