@@ -10,7 +10,7 @@ export default class ImageDisplay extends Component{
     render(){
         return(
             <div> 
-                Image display should go here
+                Image display will go here
             </div>
         )
     }

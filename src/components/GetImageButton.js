@@ -10,7 +10,7 @@ export default class GetImageButton extends Component{
     render(){
         return(
             <div> 
-                <button>Get Image</button>
+                <button>Get Image button goes here</button>
             </div>
         )
     }
