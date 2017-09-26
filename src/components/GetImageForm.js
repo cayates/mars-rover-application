@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 
+import GetImageButton from './GetImageButton';
+
 export default class GetImageForm extends Component{
 
 
 
     render(){
         return(
+        <div>
             <form className = "roverSearchBar">
             <label htmlFor="rover">Rover</label>
             <select id="rover">
@@ -22,6 +25,8 @@ export default class GetImageForm extends Component{
             <label htmlFor="sol">Martian Sol: 1000-2000</label>
             <input type="number" max="2000" min="1000"/>
             </form>
+            <GetImageButton />
+        </div>
         )
     }
 }

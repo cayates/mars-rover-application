@@ -17,14 +17,26 @@ class App extends Component {
       }
   }
 
-  _handleChange = (event) => {
-    this.setState({pilot: event.target.value})
-}
+  handleRoverChange = (event) => {
+    this.setState({rover: this.state.rover})
+  }
 
-  _handleSubmit = (event) => {
-    event.preventDefault()
-    this.props.nameChange(this.state.pilot)
-}
+  handleCameraChange = (event) => {
+    this.setState({camera: this.state.camera})
+  }
+
+  handleSolChange = (event) => {
+    this.setState({sol: this.state.sol})
+  }
+
+//   _handleChange = (event) => {
+//     this.setState({pilot: event.target.value})
+// }
+
+//   _handleSubmit = (event) => {
+//     event.preventDefault()
+//     this.props.nameChange(this.state.pilot)
+// }
 
   populatePictures = () =>{
     getPictures().then((response)=>{
@@ -41,7 +53,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <GetImageForm />
+        <GetImageForm 
+
+        
+        />
       </div>
     );
   }
