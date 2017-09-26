@@ -14,23 +14,18 @@ class App extends Component {
       }
   }
 
-  populatePictures = () =>{
-    getPictures().then((response)=>{
-    console.log(response)
-  
-      this.setState({images: response.data.results})
+  populatePictures = (imageUrl) =>{
+    getPictures(imageUrl).then((response)=>{
+    console.log(response.data)
+      this.setState({images: response.data})
     })
-  }
-
-  componentDidMount(){
-    this.populatePictures()
   }
 
   render() {
     return (
       <div>
         <GetImageForm 
-
+        populatePictures = {this.populatePictures}
 
         />
       </div>

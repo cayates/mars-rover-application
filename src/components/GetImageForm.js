@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import GetImageButton from './GetImageButton';
 import ImageDisplay from './ImageDisplay';
 
+const API_KEY = "csniFJkbj1lhu7HRHLz6E0ZaojKXPAnCSXTghLAC";
+
 export default class GetImageForm extends Component{
 
     constructor(props){
@@ -29,6 +31,15 @@ export default class GetImageForm extends Component{
         this.setState({sol: event.target.value})
       }
 
+      fetchRoverImage = (event) =>{
+        let cam = this.state.camera;
+        let rove = this.state.rover;
+        let num = this.state.sol;
+        let imageUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rove}/photos?sol=${num}&camera=${cam}&api_key=${API_KEY}`;  
+        console.log(imageUrl)
+        this.props.populatePictures(imageUrl)
+      }
+
     render(){
         console.log(this.state)
         return(
@@ -51,7 +62,7 @@ export default class GetImageForm extends Component{
             </form>
             <h1>{this.state.rover}</h1>
             <GetImageButton 
-            
+            fetchRoverImage = {this.fetchRoverImage}
             />
             <ImageDisplay 
             
