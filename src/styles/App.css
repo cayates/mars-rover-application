@@ -1,18 +1,45 @@
 .App {
-  text-align: center;
+  text-align: center;  
 }
 
 body {
+  background-image: url("https://www.universetoday.com/wp-content/uploads/2009/07/Mars_atmosphere-e1417854136714.jpg");
+  background-size: cover;  
   background-color: #95a5a6;
   font-family: Cinzel;
+}
+
+span {
+  font-size: 80px;
+}
+
+img {
+  border-radius: 50%;
+}
+
+.jumbotron {
+  margin-top: 20px;
+}
+
+.color-change {
+  color: white;
 }
 
 .margin {
   margin: 5vh;
 }
 
+.margin-left {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
 .center-me {
   text-align: center;
+}
+
+.border {
+  
 }
 
 img {

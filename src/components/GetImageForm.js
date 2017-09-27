@@ -12,7 +12,7 @@ export default class GetImageForm extends Component{
           this.state = {
             rover: "Curiosity",
             camera: "FHAZ",
-            sol: ""
+            sol: "Choose a sol"
           }
       }
 
@@ -44,23 +44,29 @@ export default class GetImageForm extends Component{
         return(
         <div className="container">
             <div className="center-me">
-            <form className = "jumbotron resize-me">
-            <label htmlFor="rover">Rover</label>
+            <form className = "jumbotron ">
+            <span>The Marsian</span>
+            <p className="lead">This is a Mars Application that allows you to see pictures of Mars from specific rovers, from specific cameras, at specific points in time.</p>
+
+            <label className="margin-left" htmlFor="rover">Rover</label>
             <select className="custom-select" onChange={this.handleRoverChange} value={this.state.value}id="rover">
               <option value="Curiosity">Curiosity</option>
               <option value="Opportunity">Opportunity</option>
               <option value="Spirit">Spirit</option>
             </select>
-            <label htmlFor="camera">Camera Type</label>
+            <label className="margin-left" htmlFor="camera">Camera Type</label>
             <select className="custom-select" onChange={this.handleCameraChange} value={this.state.value} id="camera">
               <option value="fhaz">FHAZ (Front Hazard)</option>
               <option value="rhaz">RHAZ (Rear Hazard)</option>
               <option value="navcam">NAVCAM (Navigation Cam)</option>
             </select>
-            <label htmlFor="sol">Martian Sol: 1000-2000</label>
+            <label className="margin-left" htmlFor="sol">Martian Sol: 1000-2000</label>
             <input onChange={this.handleSolChange} value={this.state.value} type="number" max="2000" min="1000"/>
             </form>
-            <h1>{this.state.rover}</h1>
+            <div className="color-change border">
+            <h1>Rover: {this.state.rover} Camera: {this.state.camera}
+              <hr />Sol: {this.state.sol}</h1>
+            </div>
             <GetImageButton 
             fetchRoverImage = {this.fetchRoverImage}
             />

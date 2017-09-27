@@ -4,7 +4,7 @@ import '../styles/App.css';
 import {getPictures} from '../services';
 
 import GetImageForm from './GetImageForm';
-import Header from './Header';
+// import Header from './Header';
 
 class App extends Component {
 
@@ -25,10 +25,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header 
-        
-        
-        />
+
         <GetImageForm 
         populatePictures = {this.populatePictures}
         photos={this.state.photos}
